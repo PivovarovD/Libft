@@ -19,7 +19,6 @@ int ft_isalnum(int c)
 	return (0);
 }
 
-//i changed something
 /*
 int main(void)
 {

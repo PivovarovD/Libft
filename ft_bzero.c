@@ -25,7 +25,8 @@ void ft_bzero(void *s, size_t n)
 }
 
 /*
-// test test
+#include <stdio.h>
+
 int	main(void)
 {
 	char str[] = "TestTest";

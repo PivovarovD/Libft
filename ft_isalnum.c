@@ -20,6 +20,8 @@ int ft_isalnum(int c)
 }
 
 /*
+#include <stdio.h>
+
 int main(void)
 {
 	int item;

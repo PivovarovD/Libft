@@ -29,6 +29,8 @@ void *ft_memcpy(void *dest, const void *src, size_t n)
 }
 
 /*
+#include <stdio.h>
+
 int main(void)
 {
 	char src[] = "Hello";
@@ -40,6 +42,13 @@ int main(void)
 	printf("After src = %s\n", src);
 	printf("After dest = %s\n", dest);
 	return (0);
+
 	// memcpy copies a block of memory from one location to another
+	// The  memcpy()  function copies n bytes from memory area src to memory area dest.  
+	// The memory areas must not overlap.  Use memmove(3) if the memory areas do overlap.
+	//
+	// Функция  memcpy()  копирует n байт из области памяти src в область памяти dest.  
+	// Эти области памяти не должны пересекаться.  Если области памяти пересекаются, следует использовать memmove(3).
+
 }
 */

@@ -20,6 +20,8 @@ int ft_isalpha(int c)
 }
 
 /*
+#include <stdio.h>
+
 int main(void)
 {
 	int item;

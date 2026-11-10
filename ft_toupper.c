@@ -26,6 +26,7 @@ int main(void)
 	char	c;
 	
 	c = '1';
-	printf("%c", ft_toupper(c));	
+	printf("%c", ft_toupper(c));
+	return (0);
 }
 */

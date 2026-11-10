@@ -14,11 +14,12 @@
 
 void *ft_memcpy(void *dest, const void *src, size_t n)
 {
-	unsigned char *dest_new = (unsigned char *) dest;
-	const unsigned char *src_new = (const unsigned char *) src;
-
+	unsigned char *dest_new;
+	const unsigned char *src_new;
+	
+	dest_new = (unsigned char *) dest;
+	src_new = (const unsigned char *) src;
 	size_t i;
-
 	i = 0;
 	while (i < n)
 	{
@@ -49,6 +50,5 @@ int main(void)
 	//
 	// Функция  memcpy()  копирует n байт из области памяти src в область памяти dest.  
 	// Эти области памяти не должны пересекаться.  Если области памяти пересекаются, следует использовать memmove(3).
-
 }
 */

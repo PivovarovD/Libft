@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dpivovar <student.42.fr>                   +#+  +:+       +#+        */
+/*   By: dpivovar <dpivovar@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026-10-29 20:38:57 by dpivovar          #+#    #+#             */
-/*   Updated: 2026-10-29 20:38:57 by dpivovar         ###   ########.fr       */
+/*   Created: 2026-11-12 18:30:48 by dpivovar          #+#    #+#             */
+/*   Updated: 2026-11-12 18:30:48 by dpivovar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isdigit(int c)
+int	ft_isdigit(int c)
 {
 	if (c >= '0' && c <= '9')
 		return (1);

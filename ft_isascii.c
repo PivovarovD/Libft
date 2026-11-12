@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dpivovar <student.42.fr>                   +#+  +:+       +#+        */
+/*   By: dpivovar <dpivovar@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026-10-29 20:38:50 by dpivovar          #+#    #+#             */
-/*   Updated: 2026-10-29 20:38:50 by dpivovar         ###   ########.fr       */
+/*   Created: 2026-11-12 18:30:39 by dpivovar          #+#    #+#             */
+/*   Updated: 2026-11-12 18:30:39 by dpivovar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isascii(int c)
+int	ft_isascii(int c)
 {
-	if(c >= 0 && c <= 127)
+	if (c >= 0 && c <= 127)
 		return (1);
 	return (0);
 }

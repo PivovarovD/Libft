@@ -3,23 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dpivovar <student.42.fr>                   +#+  +:+       +#+        */
+/*   By: dpivovar <dpivovar@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026-11-12 16:21:23 by dpivovar          #+#    #+#             */
-/*   Updated: 2026-11-12 16:21:23 by dpivovar         ###   ########.fr       */
+/*   Created: 2026-11-12 18:32:27 by dpivovar          #+#    #+#             */
+/*   Updated: 2026-11-12 18:32:27 by dpivovar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strrchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
-	char	*tmp;
+	char			*tmp;
 	unsigned char	c_new;
-	
+
 	tmp = NULL;
 	c_new = (unsigned char)c;
-	
 	while (*s != '\0')
 	{
 		if ((unsigned char)*s == c_new)
@@ -39,5 +38,6 @@ int main(void)
 	char c = '1';
 
 	printf("%s", ft_strrchr(s, c));
+	return (0);
 }
 */

@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dpivovar <student.42.fr>                   +#+  +:+       +#+        */
+/*   By: dpivovar <dpivovar@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026-10-29 20:46:16 by dpivovar          #+#    #+#             */
-/*   Updated: 2026-10-29 20:46:16 by dpivovar         ###   ########.fr       */
+/*   Created: 2026-11-12 18:30:56 by dpivovar          #+#    #+#             */
+/*   Updated: 2026-11-12 18:30:56 by dpivovar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isprint(int c)
+int	ft_isprint(int c)
 {
-	if(c >= 32 && c <= 126)
+	if (c >= 32 && c <= 126)
 		return (1);
 	return (0);
 }

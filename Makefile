@@ -2,7 +2,8 @@ NAME = libft.a
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
-SRCS = ft_bzero.c \
+SRCS = ft_atoi.c \
+	ft_bzero.c \
 	ft_isalnum.c \
 	ft_isalpha.c \
 	ft_isascii.c \

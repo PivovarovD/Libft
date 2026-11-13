@@ -14,19 +14,29 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
+	const unsigned char	*s_new;
+	unsigned char		c_new;
+
+	s_new = (const unsigned char *)s;
+	c_new = (unsigned char)c;
+	while (n > 0)
+	{
+		if (*s_new == c_new)
+			return ((void *)s_new);
+		s_new++;
+		n--;
+	}
+	return (NULL);
 }
 /*
 #include <stdio.h>
 
 int main(void)
 {
+	char s[] = "Hello";
+	char c = 'l';
 
-	// The  memchr()  function scans the initial n bytes of the memory area
-    //    pointed to by s for the first instance of c.  Both c and  the  bytes
-    //    of the memory area pointed to by s are interpreted as unsigned char.
-
-	// The  memchr() and memrchr() functions return a pointer to the match‐
-    //    ing byte or NULL if the character does not occur in the given memory
-    //    area.
+	printf("%s", (char *)ft_memchr(s, c, 5));
+	return (0);
 }
 */

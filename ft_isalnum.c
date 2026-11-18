@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dpivovar <dpivovar@student.42lisboa.com>   +#+  +:+       +#+        */
+/*   By: dpivovar <dpivovar@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026-11-12 18:30:22 by dpivovar          #+#    #+#             */
-/*   Updated: 2026-11-12 18:30:22 by dpivovar         ###   ########.fr       */
+/*   Created: 2026/11/12 18:30:22 by dpivovar          #+#    #+#             */
+/*   Updated: 2026/11/18 15:14:50 by dpivovar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

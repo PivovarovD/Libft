@@ -12,316 +12,119 @@
 
 #include "libft.h"
 
-// этап 2
-static int count_words (char const *s, char c)
+static int	count_words(char const *s, char c)
 {
-	int	word_quantity;
+	int	words_quantity;
 	int	in_word;
 
-	word_quantity = 0;
+	words_quantity = 0;
 	in_word = 0;
 	while (*s != '\0')
 	{
 		if (*s != c && in_word == 0)
-			{
-				word_quantity++;
-				in_word = 1;
-			}
-		if (*s == c)
-			in_word = 0;		
+		{
+			words_quantity++;
+			in_word = 1;
+		}
+		else if (*s == c)
+			in_word = 0;
 		s++;
 	}
-	return (word_quantity);
+	return (words_quantity);
 }
 
-static char *word_dup(char const *start, int len)
+static char	*get_word(char const *s, char c)
 {
 	char	*word;
-	int		i;
+	size_t	len;
+	size_t	i;
 
+	len = 0;
+	while (s[len] != '\0' && s[len] != c)
+		len++;
 	word = malloc((len + 1) * sizeof(char));
 	if (word == NULL)
 		return (NULL);
 	i = 0;
 	while (i < len)
 	{
-		word[i] = start[i];
+		word[i] = s[i];
 		i++;
 	}
-	word[len] = '\0';
+	word[i] = '\0';
 	return (word);
 }
 
-free_all(char **arr, int count)
+static char	**free_all(char **result_array, int count)
 {
-	
-	
-}
-
-char	**ft_split(char const *s, char c)
-{
-	int		word_quantity;
-	char	**result_array;
-	int		i;
-	int		j;
-	int		len;
-
-// этап 1
-	if (s == NULL)
-		return (NULL);
-		
-	
-	
-	
-// этап 3
-	word_quantity = count_words(s, c);
-	result_array = malloc((word_quantity + 1) * sizeof(char *));
-	if (result_array == NULL)
-		return (NULL);
-
-	
-
-
-// этап 4
-	while (*s != '\0')
-	{
-
-		
-	}
-		
-		
-	// i = 0;
-	// j = 0;
-	// while (s[i] != '\0')
-	// {
-	// 	while (s[i] != '\0' && s[i] == c)
-	// 	{
-	// 		i++;
-	// 	}
-	// 	if (s[i] == '\0');
-	// 		break;
-	// 	len = 0;
-	// 	while (s[i + len] && s[i + len] != c)
-	// 		len++;
-	// 	result_array[j] = word_dup(&s[i], len);
-	// 	if (result_array[j] == NULL)
-	// 	{#include "libft.h"
-
-static int	count_words(char const *s, char c)
-{
-	int	words;
-
-	words = 0;
-	while (*s)
-	{
-		while (*s == c)
-			s++;
-		if (*s)
-			words++;
-		while (*s != c && *s)
-			s++;
-	}
-	return (words);
-}
-
-static void	*free_all(char **res)
-{
-	size_t	i;
+	int	i;
 
 	i = 0;
-	while (res[i])
+	while (i < count)
 	{
-		free(res[i]);
+		free(result_array[i]);
 		i++;
 	}
-	free(res);
+	free(result_array);
 	return (NULL);
 }
 
-static char	**fill_words(char **res, char const *s, char c)
+static char	**fill_words(char **result_array, char const *s, char c)
 {
-	size_t	i;
-	size_t	j;
+	int	i;
+	int	j;
 
+	i = 0;
 	j = 0;
-	while (*s)
+	while (s[i] != '\0')
 	{
-		while (*s == c)
-			s++;
-		if (*s)
+		while (s[i] != '\0' && s[i] == c)
+			i++;
+		if (s[i] != '\0')
 		{
-			i = 0;
-			while (s[i] && s[i] != c)
-				i++;
-			res[j] = ft_substr(s, 0, i);
-			if (!res[j])
-				return (free_all(res));
+			result_array[j] = get_word(&s[i], c);
+			if (result_array[j] == NULL)
+				return (free_all(result_array, j));
 			j++;
-			s += i;
+			while (s[i] != '\0' && s[i] != c)
+				i++;
 		}
 	}
-	return (res);
-}
-
-char	**ft_split(char const *s, char c)
-{
-	char	**res;
-
-	if (!s)
-		return (NULL);
-	res = ft_calloc(count_words(s, c) + 1, sizeof(char *));
-	if (!res)
-		return (NULL);
-	return (fill_words(res, s, c));
-}
-
-/*
-int	main(void)
-{
-	char	**words;
-	size_t	i;
-
-	words = ft_split("ola,mundo,libft", ',');
-	if (!words)
-		return (1);
-	i = 0;
-	while (words[i])
-	{
-		ft_putendl_fd(words[i], 1);
-		free(words[i]);
-		i++;
-	}
-	free(words);
-	return (0);
-}*/
-// cc -Wall -Wextra -Werror *.c -o test_ft_split
-	// 		free_all(result_array, j);
-	// 		return (NULL);
-	// 	}
-	// 	i = i + len;
-	// 	j++;
-	// }
-	// result_array[j] = NULL;	
-
-	
-	
+	result_array[j] = NULL;
 	return (result_array);
 }
 
-
-
-
-#include <stdio.h>
-
-int main(void)
-{
-	char const	s[] = ",,,Spartak,,,Moscow,,,";
-	char		c;
-
-	c = ',';
-
-	printf("%d", count_words(s, c));
-
-	return (0);
-}
-
-
-
-
-
-
-///////////
-
-/*
-#include "libft.h"
-
-static int	count_words(char const *s, char c)
-{
-	int	words;
-
-	words = 0;
-	while (*s)
-	{
-		while (*s == c)
-			s++;
-		if (*s)
-			words++;
-		while (*s != c && *s)
-			s++;
-	}
-	return (words);
-}
-
-static void	*free_all(char **res)
-{
-	size_t	i;
-
-	i = 0;
-	while (res[i])
-	{
-		free(res[i]);
-		i++;
-	}
-	free(res);
-	return (NULL);
-}
-
-static char	**fill_words(char **res, char const *s, char c)
-{
-	size_t	i;
-	size_t	j;
-
-	j = 0;
-	while (*s)
-	{
-		while (*s == c)
-			s++;
-		if (*s)
-		{
-			i = 0;
-			while (s[i] && s[i] != c)
-				i++;
-			res[j] = ft_substr(s, 0, i);
-			if (!res[j])
-				return (free_all(res));
-			j++;
-			s += i;
-		}
-	}
-	return (res);
-}
-
 char	**ft_split(char const *s, char c)
 {
-	char	**res;
+	char	**result_array;
 
-	if (!s)
+	if (s == NULL)
 		return (NULL);
-	res = ft_calloc(count_words(s, c) + 1, sizeof(char *));
-	if (!res)
+	result_array = malloc((count_words(s, c) + 1) * sizeof(char *));
+	if (result_array == NULL)
 		return (NULL);
-	return (fill_words(res, s, c));
+	return (fill_words(result_array, s, c));
 }
 
 /*
+#include <stdio.h>
+
 int	main(void)
 {
-	char	**words;
-	size_t	i;
+	char	**result_array;
+	int		i;
 
-	words = ft_split("ola,mundo,libft", ',');
-	if (!words)
+	result_array = ft_split("...Hello..42...school...", '.');
+	if (result_array == NULL)
 		return (1);
 	i = 0;
-	while (words[i])
+	while (result_array[i] != NULL)
 	{
-		ft_putendl_fd(words[i], 1);
-		free(words[i]);
+		printf("[%d]: %s\n", i, result_array[i]);
+		free(result_array[i]);
 		i++;
 	}
-	free(words);
+	free(result_array);
 	return (0);
-}*/
-// cc -Wall -Wextra -Werror *.c -o test_ft_split
-
+}
 */

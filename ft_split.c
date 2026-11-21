@@ -6,7 +6,7 @@
 /*   By: dpivovar <dpivovar@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/18 01:03:46 by dpivovar          #+#    #+#             */
-/*   Updated: 2026/11/18 23:14:02 by dpivovar         ###   ########.fr       */
+/*   Updated: 2026/11/21 19:01:09 by dpivovar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,7 +114,7 @@ int	main(void)
 	char	**result_array;
 	int		i;
 
-	result_array = ft_split("...Hello..42...school...", '.');
+	result_array = ft_split("...Hello.\n .42...school...", '.');
 	if (result_array == NULL)
 		return (1);
 	i = 0;

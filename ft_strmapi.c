@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dpivovar <dpivovar@student.42lisboa.com>   +#+  +:+       +#+        */
+/*   By: dpivovar <dpivovar@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026-11-21 03:33:27 by dpivovar          #+#    #+#             */
-/*   Updated: 2026-11-21 03:33:27 by dpivovar         ###   ########.fr       */
+/*   Created: 2026/11/21 03:33:27 by dpivovar          #+#    #+#             */
+/*   Updated: 2026/11/21 19:38:20 by dpivovar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,42 +14,48 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
+	char	*new_str;
+	size_t	len;
+	size_t	i;
+
 	if (s == NULL || f == NULL)
 		return (NULL);
-
-	size_t len = 0;
-	while (s[len] != '\0')
-		len++;
-
-	char *result = malloc((len + 1) * sizeof(char));
-	if (result == NULL)
+	len = ft_strlen(s);
+	new_str = malloc((len + 1) * sizeof(char));
+	if (new_str == NULL)
 		return (NULL);
-
-	for (size_t i = 0; i < len; i++)
-		result[i] = f(i, s[i]);
-
-	result[len] = '\0';
-	return (result);
+	i = 0;
+	while (i < len)
+	{
+		new_str[i] = f(i, s[i]);
+		i++;
+	}
+	new_str[i] = '\0';
+	return (new_str);
 }
+
+/*
+char	test_func(unsigned int i, char c)
+{
+	if (i % 2 == 0 && (c >= 'A' && c <= 'Z'))
+		return (c + 32);
+	return (c);
+} 
 
 #include <stdio.h>
 
 int main(void)
 {
-	char *result = ft_strmapi("Hello, World!", [](unsigned int i, char c) {
-		return (char)(c + 1); // Example transformation: increment each character
-	});
-
-	if (result != NULL)
+	char	*str = "HELLO";
+	char	*new_str;
+	
+	new_str = ft_strmapi(str, test_func);
+	if (new_str != NULL)
 	{
-		printf("Result: %s\n", result);
-		free(result);
+		printf("str: %s\n", str);
+		printf("new_str: %s\n", new_str);
+		free(new_str);
 	}
-	else
-	{
-		printf("Memory allocation failed or input was NULL.\n");
-	}
-
-	return 0;
+	return (0);
 }
-
+*/

@@ -32,8 +32,8 @@ int	main(void)
 	head = NULL;
 
 	// 2. Создаём два отдельных узла в памяти
-	node1 = ft_lstnew("First");
-	node2 = ft_lstnew("Second");
+	node1 = ft_lstnew("One");
+	node2 = ft_lstnew("Twoo");
 
 	// 3. Делаем node1 началом списка
 	head = node1;

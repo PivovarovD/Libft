@@ -13,6 +13,7 @@ SRCS = ft_atoi.c \
 	ft_itoa.c \
 	ft_lstadd_front.c \
 	ft_lstnew.c \
+	ft_lstsize.c \
 	ft_memchr.c \
 	ft_memcmp.c \
 	ft_memcpy.c \

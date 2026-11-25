@@ -23,9 +23,9 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *))
 /*
 #include <stdio.h>
 
-void	del_content(void *content)
+static void	del_content(void *content)
 {
-	printf("Delete node content\n");
+	printf("Delete node content: %s\n", (char *)content);
 	free(content);
 }
 
@@ -48,7 +48,6 @@ int	main(void)
 	ft_lstdelone(node2, del_content);
 	return (0);
 }
-// cc -Wall -Wextra -Werror ft_lstdelone.c ft_lstnew.c 
-// ft_lstadd_back.c ft_strdup.c ft_lstlast.c ft_strlcpy.c 
-// ft_strlen.c -fsanitize=address
+// cc -Wall -Wextra -Werror -fsanitize=address ft_lstdelone.c ft_lstnew.c 
+// ft_lstadd_back.c ft_strdup.c ft_lstlast.c ft_strlcpy.c ft_strlen.c
 */

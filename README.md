@@ -147,13 +147,13 @@ If the header is in another directory, add `-I<path to libft.h>`.
 
 ### Testing
 
-I compare my functions with their libc counterparts and check edge cases such as empty strings, `n = 0`, and allocation failures. I used [LibftTester by Tripouille](https://github.com/Tripouille/libftTester) and sanitizers (AddressSanitizer, Valgrind) to catch memory errors.
+I compare my functions with their libc counterparts and check edge cases such as empty strings, `n = 0`, and allocation failures. I used [Claudenette by Rabeloivan](https://github.com/rabeloivan/claudenette) and sanitizers (AddressSanitizer, Valgrind) to catch memory errors.
 
 ## Resources
 
 - Linux manual pages: `man 3 <function>`
 - The 42 Libft subject
-- [LibftTester by Tripouille](https://github.com/Tripouille/libftTester)
+- [Claudenette by Rabeloivan](https://github.com/rabeloivan/claudenette)
 - Documentation for AddressSanitizer and Valgrind
 - Articles and tutorials on pointers, function pointers, and linked lists in C
 

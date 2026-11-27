@@ -58,11 +58,11 @@ Everything is compiled with `-Wall -Wextra -Werror` and archived with `ar` into 
 
 | Function | Prototype | What it does |
 |---|---|---|
-| `ft_substr` | `char *ft_substr(char const *s, unsigned int start, size_t len)` | Returns a substring of at most `len` characters starting at `start`. |
+| `ft_substr` | `char *ft_substr(char const *s, unsigned int start, size_t len)` | Allocates memory and returns a substring of at most `len` characters starting at `start`.  If `start` is past the end, the result is an empty string. |
 | `ft_strjoin` | `char *ft_strjoin(char const *s1, char const *s2)` | Returns a new string made of `s1` followed by `s2`. |
-| `ft_strtrim` | `char *ft_strtrim(char const *s1, char const *set)` | Removes leading and trailing characters found in `set`. |
-| `ft_split` | `char **ft_split(char const *s, char c)` | Splits `s` on `c` into a `NULL`-terminated array of new strings. |
-| `ft_itoa` | `char *ft_itoa(int n)` | Converts an integer to a string, including negatives and `INT_MIN`. |
+| `ft_strtrim` | `char *ft_strtrim(char const *s1, char const *set)` | Returns a copy of `s1` without any leading and trailing characters found in `set`. |
+| `ft_split` | `char **ft_split(char const *s, char c)` | Splits `s` on the delimiter `c` into a `NULL`-terminated array of new strings. Consecutive delimiters do not produce empty words. If any allocation fails, everything already allocated is freed and `NULL` is returned.|
+| `ft_itoa` | `char *ft_itoa(int n)` | Converts an integer to a newly allocated string, including negatives and `INT_MIN`. |
 | `ft_strmapi` | `char *ft_strmapi(char const *s, char (*f)(unsigned int, char))` | Applies `f` to each character and returns the new string. |
 | `ft_striteri` | `void ft_striteri(char *s, void (*f)(unsigned int, char *))` | Applies `f` to each character in place. |
 | `ft_putchar_fd` | `void ft_putchar_fd(char c, int fd)` | Writes a character to `fd`. |
@@ -147,14 +147,14 @@ If the header is in another directory, add `-I<path to libft.h>`.
 
 ### Testing
 
-I compare my functions with their libc counterparts and check edge cases such as empty strings, `n = 0`, and allocation failures. I used [Claudenette by Rabeloivan](https://github.com/rabeloivan/claudenette) and sanitizers (AddressSanitizer, Valgrind) to catch memory errors.
+I compare my functions with their libc counterparts and check edge cases such as empty strings, `n = 0`, and allocation failures. I used [Claudenette by Rabeloivan](https://github.com/rabeloivan/claudenette) and sanitizer (AddressSanitizer) to catch memory errors.
 
 ## Resources
 
 - Linux manual pages: `man 3 <function>`
 - The 42 Libft subject
 - [Claudenette by Rabeloivan](https://github.com/rabeloivan/claudenette)
-- Documentation for AddressSanitizer and Valgrind
+- Documentation for AddressSanitizer
 - Articles and tutorials on pointers, function pointers, and linked lists in C
 
 **AI usage:** AI was used as a study aid to explain concepts, help read compiler and tester output, and help write this README.

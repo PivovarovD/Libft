@@ -6,12 +6,25 @@
 /*   By: dpivovar <dpivovar@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/12 18:32:18 by dpivovar          #+#    #+#             */
-/*   Updated: 2026/11/18 15:17:52 by dpivovar         ###   ########.fr       */
+/*   Updated: 2026/11/27 13:36:38 by dpivovar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
+{
+	while (n > 0 && *s1 != '\0' && *s2 != '\0' && *s1 == *s2)
+	{
+		s1++;
+		s2++;
+		n--;
+	}
+	if (n == 0)
+		return (0);
+	return ((unsigned char)*s1 - (unsigned char)*s2);
+}
+/*
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	if (n == 0)
@@ -24,6 +37,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	}
 	return ((unsigned char)*s1 - (unsigned char)*s2);
 }
+*/
 /*
 #include <stdio.h>
 

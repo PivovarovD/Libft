@@ -6,7 +6,7 @@
 /*   By: dpivovar <dpivovar@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/14 23:57:36 by dpivovar          #+#    #+#             */
-/*   Updated: 2026/11/16 15:12:48 by dpivovar         ###   ########.fr       */
+/*   Updated: 2026/11/27 14:34:19 by dpivovar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,12 @@
 
 char	*ft_strdup(const char *s)
 {
-	size_t	length_str;
 	char	*new_str;
 
-	length_str = ft_strlen(s);
-	new_str = (char *)malloc((length_str + 1) * sizeof(char));
+	new_str = malloc((ft_strlen(s) + 1) * sizeof(char));
 	if (new_str == NULL)
 		return (NULL);
-	ft_strlcpy(new_str, s, length_str + 1);
+	ft_strlcpy(new_str, s, ft_strlen(s) + 1);
 	return (new_str);
 }
 /*

@@ -20,11 +20,11 @@ Everything is compiled with `-Wall -Wextra -Werror` and archived with `ar` into 
 
 | Function | Prototype | What it does |
 |---|---|---|
-| `ft_isalpha` | `int ft_isalpha(int c)` | Returns non-zero if `c` is a letter, 0 otherwise. |
-| `ft_isdigit` | `int ft_isdigit(int c)` | Returns non-zero if `c` is a decimal digit. |
-| `ft_isalnum` | `int ft_isalnum(int c)` | Returns non-zero if `c` is a letter or a digit. |
-| `ft_isascii` | `int ft_isascii(int c)` | Returns non-zero if `c` is in telp write this READMEhe ASCII range (0 to 127). |
-| `ft_isprint` | `int ft_isprint(int c)` | Returns non-zero if `c` is printable (32 to 126). |
+| `ft_isalpha` | `int ft_isalpha(int c)` | Returns 1 if `c` is a letter, 0 otherwise. |
+| `ft_isdigit` | `int ft_isdigit(int c)` | Returns 1 if `c` is a decimal digit, 0 otherwise. |
+| `ft_isalnum` | `int ft_isalnum(int c)` | Returns 1 if `c` is a letter or a digit, 0 otherwise. |
+| `ft_isascii` | `int ft_isascii(int c)` | Returns 1 if `c` fits in the ASCII table (0 to 127). |
+| `ft_isprint` | `int ft_isprint(int c)` | Returns 1 if `c` is printable (32 to 126). |
 | `ft_toupper` | `int ft_toupper(int c)` | Converts a lowercase letter to uppercase, otherwise returns `c` unchanged. |
 | `ft_tolower` | `int ft_tolower(int c)` | Converts an uppercase letter to lowercase, otherwise returns `c` unchanged. |
 
@@ -38,7 +38,7 @@ Everything is compiled with `-Wall -Wextra -Werror` and archived with `ar` into 
 | `ft_memmove` | `void *ft_memmove(void *dest, const void *src, size_t n)` | Like `ft_memcpy`, but safe when the areas overlap. |
 | `ft_memchr` | `void *ft_memchr(const void *s, int c, size_t n)` | Returns a pointer to the first byte equal to `c` in `n` bytes, or `NULL`. |
 | `ft_memcmp` | `int ft_memcmp(const void *s1, const void *s2, size_t n)` | Compares `n` bytes and returns the difference of the first mismatch. |
-| `ft_calloc` | `void *ft_calloc(size_t nmemb, size_t size)` | Allocates `nmemb * size` zeroed bytes, `NULL` on overflow or failure. |
+| `ft_calloc` | `void *ft_calloc(size_t nmemb, size_t size)` | Allocates `nmemb * size` zeroed bytes, `NULL` if the multiplication overflows or if `malloc` fails. |
 
 #### String functions
 
@@ -46,11 +46,11 @@ Everything is compiled with `-Wall -Wextra -Werror` and archived with `ar` into 
 |---|---|---|
 | `ft_strlen` | `size_t ft_strlen(const char *s)` | Returns the length of `s` without the `'\0'`. |
 | `ft_strlcpy` | `size_t ft_strlcpy(char *dst, const char *src, size_t size)` | Copies up to `size - 1` characters and null-terminates. Returns `ft_strlen(src)`. |
-| `ft_strlcat` | `size_t ft_strlcat(char *dst, const char *src, size_t size)` | Appends `src` to `dst` within `size` bytes. Returns the length it tried to build. |
-| `ft_strchr` | `char *ft_strchr(const char *s, int c)` | Returns the first occurrence of `c` in `s`, or `NULL`. |
+| `ft_strlcat` | `size_t ft_strlcat(char *dst, const char *src, size_t size)` | Appends `src` to `dst` within `size` bytes. Returns the length it tried to build, so truncation can be detected. |
+| `ft_strchr` | `char *ft_strchr(const char *s, int c)` | Returns a pointer to the first occurrence of `c` in `s`, or `NULL`. Searching for `\0` returns a pointer to the null terminator. |
 | `ft_strrchr` | `char *ft_strrchr(const char *s, int c)` | Returns the last occurrence of `c` in `s`, or `NULL`. |
 | `ft_strncmp` | `int ft_strncmp(const char *s1, const char *s2, size_t n)` | Compares at most `n` characters as `unsigned char`. |
-| `ft_strnstr` | `char *ft_strnstr(const char *big, const char *little, size_t len)` | Finds `little` in the first `len` characters of `big`. |
+| `ft_strnstr` | `char *ft_strnstr(const char *big, const char *little, size_t len)` | Finds `little` in the first `len` characters of `big`. Returns `big` if `little` is empty, `NULL` if there is no match. |
 | `ft_atoi` | `int ft_atoi(const char *nptr)` | Skips whitespace, reads an optional sign, converts digits to `int`. |
 | `ft_strdup` | `char *ft_strdup(const char *s)` | Returns a newly allocated copy of `s`. |
 

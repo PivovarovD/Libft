@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dpivovar <dpivovar@student.42lisboa.com>   +#+  +:+       +#+        */
+/*   By: dpivovar <dpivovar@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026-11-12 18:31:44 by dpivovar          #+#    #+#             */
-/*   Updated: 2026-11-12 18:31:44 by dpivovar         ###   ########.fr       */
+/*   Created: 2026/11/12 18:31:44 by dpivovar          #+#    #+#             */
+/*   Updated: 2026/11/27 13:01:44 by dpivovar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	unsigned char	searched_char;
+	unsigned char	searched_c;
 
-	searched_char = (unsigned char)c;
+	searched_c = (unsigned char)c;
 	while (*s != '\0')
 	{
-		if ((unsigned char)*s == searched_char)
+		if ((unsigned char)*s == searched_c)
 			return ((char *)s);
 		s++;
 	}
-	if (searched_char == '\0')
+	if (searched_c == '\0')
 		return ((char *)s);
 	return (NULL);
 }

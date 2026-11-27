@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dpivovar <dpivovar@student.42lisboa.com>   +#+  +:+       +#+        */
+/*   By: dpivovar <dpivovar@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026-11-12 18:31:55 by dpivovar          #+#    #+#             */
-/*   Updated: 2026-11-12 18:31:55 by dpivovar         ###   ########.fr       */
+/*   Created: 2026/11/12 18:31:55 by dpivovar          #+#    #+#             */
+/*   Updated: 2026/11/27 12:51:41 by dpivovar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,22 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	size_t	src_length;
-	size_t	dst_length;
 	size_t	i;
+	size_t	j;
 
-	src_length = ft_strlen(src);
-	dst_length = 0;
-	while (dst_length < size && dst[dst_length])
-		dst_length++;
-	if (dst_length == size)
-		return (size + src_length);
 	i = 0;
-	while (src[i] && (dst_length + i) < (size - 1))
-	{
-		dst[dst_length + i] = src[i];
+	while (i < size && dst[i])
 		i++;
+	if (i == size)
+		return (size + ft_strlen(src));
+	j = 0;
+	while (src[j] && (i + j) < size - 1)
+	{
+		dst[i + j] = src[j];
+		j++;
 	}
-	dst[dst_length + i] = '\0';
-	return (dst_length + src_length);
+	dst[i + j] = '\0';
+	return (i + ft_strlen(src));
 }
 /*
 #include <stdio.h>

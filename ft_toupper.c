@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dpivovar <dpivovar@student.42lisboa.com>   +#+  +:+       +#+        */
+/*   By: dpivovar <dpivovar@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026-11-12 18:32:42 by dpivovar          #+#    #+#             */
-/*   Updated: 2026-11-12 18:32:42 by dpivovar         ###   ########.fr       */
+/*   Created: 2026/11/12 18:32:42 by dpivovar          #+#    #+#             */
+/*   Updated: 2026/11/27 01:49:54 by dpivovar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ int main(void)
 {
 	char	c;
 	
-	c = '1';
-	printf("%c", ft_toupper(c));
+	c = 'a';
+	printf("%c\n", ft_toupper(c));
 	return (0);
 }
 */
